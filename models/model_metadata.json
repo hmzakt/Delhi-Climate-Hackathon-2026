@@ -1,0 +1,132 @@
+{
+  "class_names": [
+    "background",
+    "biomass",
+    "clean_air",
+    "firecrackers",
+    "secondary_aerosols",
+    "soil_road_dust",
+    "stagnation",
+    "traffic",
+    "urban_mix",
+    "winter_inversion"
+  ],
+  "label_encoding": {
+    "background": 0,
+    "biomass": 1,
+    "clean_air": 2,
+    "firecrackers": 3,
+    "secondary_aerosols": 4,
+    "soil_road_dust": 5,
+    "stagnation": 6,
+    "traffic": 7,
+    "urban_mix": 8,
+    "winter_inversion": 9
+  },
+  "feature_columns": [
+    "pm25",
+    "temperature_2m",
+    "relative_humidity_2m",
+    "wind_speed_10m",
+    "wind_direction_10m",
+    "surface_pressure",
+    "precipitation",
+    "cloud_cover",
+    "fire_count_100km",
+    "total_frp_100km",
+    "max_frp_100km",
+    "upwind_fire_flag",
+    "fire_data_available",
+    "no2",
+    "pm10",
+    "hour_ist",
+    "day_of_week",
+    "month",
+    "day",
+    "is_weekend",
+    "is_night",
+    "is_rush_hour",
+    "season",
+    "is_diwali",
+    "is_festive",
+    "festive_proximity",
+    "is_festive_evening",
+    "wind_speed_inv",
+    "stagnation_index",
+    "dispersion_index",
+    "low_wind_flag",
+    "cold_night_flag",
+    "precip_flag",
+    "fire_x_low_wind",
+    "pm25_no2_ratio",
+    "pm10_pm25_ratio",
+    "coarse_fraction",
+    "pm25_wind_ratio",
+    "pm25_rolling_3h",
+    "pm25_rolling_6h",
+    "pm25_rolling_12h",
+    "pm25_std_6h",
+    "pm25_lag_1h",
+    "pm25_lag_3h",
+    "pm25_lag_6h",
+    "pm25_diff_1h",
+    "wind_speed_lag_3h",
+    "fire_frp_lag_3h",
+    "pm25_spike_ratio",
+    "dist_to_highway",
+    "dist_to_industrial",
+    "dist_to_kilns"
+  ],
+  "n_features": 52,
+  "n_samples": 15657,
+  "cv_folds": 5,
+  "cv_scores": [
+    {
+      "fold": 1,
+      "accuracy": 0.9929757343550447,
+      "f1_weighted": 0.9930660410109714
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.993933588761175,
+      "f1_weighted": 0.9939567373422548
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.9932928776748643,
+      "f1_weighted": 0.9932227429333867
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.9936122644522517,
+      "f1_weighted": 0.9936647064987765
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.9942510380070265,
+      "f1_weighted": 0.9943186343821753
+    }
+  ],
+  "xgb_params": {
+    "n_estimators": 500,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,
+    "gamma": 0.1,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "random_state": 42,
+    "n_jobs": -1,
+    "eval_metric": "mlogloss",
+    "early_stopping_rounds": 30
+  },
+  "drop_columns": [
+    "location_name",
+    "datetime_hour",
+    "latitude",
+    "longitude",
+    "source_label"
+  ]
+}

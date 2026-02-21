@@ -1,0 +1,22 @@
+Delhi Air Pollution Source Classifier — CV Report
+==================================================
+
+                    precision    recall  f1-score   support
+
+        background       0.99      1.00      1.00      2592
+           biomass       0.96      0.97      0.97       310
+         clean_air       1.00      1.00      1.00      1516
+      firecrackers       0.96      0.99      0.97       300
+secondary_aerosols       0.93      0.95      0.94       106
+    soil_road_dust       0.99      0.99      0.99       688
+        stagnation       0.98      0.99      0.99       473
+           traffic       0.99      0.99      0.99       706
+         urban_mix       1.00      0.99      1.00      8915
+  winter_inversion       0.88      1.00      0.94        51
+
+          accuracy                           0.99     15657
+         macro avg       0.97      0.99      0.98     15657
+      weighted avg       0.99      0.99      0.99     15657
+
+Overall Accuracy: 0.9936
+Weighted F1: 0.9936

@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050a16;
+  --background-2: #0a1528;
+  --foreground: #e2e8f0;
+  --muted: #94a3b8;
+  --panel: rgba(15, 23, 42, 0.8);
+  --panel-border: rgba(148, 163, 184, 0.22);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 12% 6%, rgba(34, 211, 238, 0.1), transparent 45%),
+    radial-gradient(900px 500px at 90% 90%, rgba(16, 185, 129, 0.09), transparent 48%),
+    linear-gradient(180deg, var(--background-2) 0%, var(--background) 55%);
+}
+
+code, .font-mono {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+  border: 2px solid rgba(15, 23, 42, 0.6);
+}
+
+/* Leaflet overrides for dark theme */
+.leaflet-container {
+  background: #071124 !important;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--panel) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--panel-border) !important;
+  border-radius: 14px !important;
+  color: var(--foreground) !important;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.55) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--panel) !important;
+  border: 1px solid var(--panel-border) !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup-close-button {
+  color: var(--muted) !important;
+  font-size: 17px !important;
+  padding: 4px 8px 0 0 !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #f1f5f9 !important;
+}
+
+.leaflet-control-zoom a {
+  background: rgba(15, 23, 42, 0.9) !important;
+  color: #e2e8f0 !important;
+  border-color: rgba(100, 116, 139, 0.2) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(30, 41, 59, 0.9) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(15, 23, 42, 0.7) !important;
+  color: #64748b !important;
+  font-size: 11px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #06b6d4 !important;
+}
