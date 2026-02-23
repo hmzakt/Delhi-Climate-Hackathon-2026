@@ -99,7 +99,7 @@ export default function ExplanationPanel({ station, onClose }: ExplanationPanelP
                                     : "bg-slate-900 text-slate-200 border border-slate-700 hover:bg-slate-800"
                             } ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
                         >
-                            ðŸ§‘â€âš–ï¸ Policy-Level Insight
+                         Policy-Level Insight
                         </button>
                     </div>
                 </div>

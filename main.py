@@ -28,10 +28,7 @@ from llm_explainer import (
     GOOGLE_API_KEY
 )
 
-# ═════════════════════════════════════════════════════════════════
 # LOAD MODEL + METADATA ON STARTUP
-# ═════════════════════════════════════════════════════════════════
-
 MODEL_DIR = Path("models")
 
 with open(MODEL_DIR / "model_metadata.json") as f:
@@ -62,7 +59,7 @@ BRICK_KILNS = [
     (28.730, 77.050),
 ]
 
-# ── Multi-year festive dates (must mirror data_pipeline.py) ──
+# ── Multi-year festive dates (must mirror data_pipeline.py)
 FESTIVE_DATES_DIWALI = {
     "2024-10-30", "2024-10-31", "2024-11-01", "2024-11-02", "2024-11-03",
     "2025-10-18", "2025-10-19", "2025-10-20", "2025-10-21", "2025-10-22",
@@ -80,14 +77,11 @@ FESTIVE_DATES_OTHER = {
     "2026-11-15", "2026-11-16",
 }
 ALL_FESTIVE_DATES = FESTIVE_DATES_DIWALI | FESTIVE_DATES_OTHER
-DIWALI_DATES = FESTIVE_DATES_DIWALI  # backward-compatible alias
+DIWALI_DATES = FESTIVE_DATES_DIWALI 
 
 # Pre-compute festive dates as date objects for proximity calculation
 _FESTIVE_DATE_OBJS = sorted([datetime.strptime(d, "%Y-%m-%d").date() for d in ALL_FESTIVE_DATES])
 
-# ═════════════════════════════════════════════════════════════════
-# HELPERS
-# ═════════════════════════════════════════════════════════════════
 
 def haversine_km(lat1, lon1, lat2, lon2):
     R = 6371
@@ -134,10 +128,9 @@ def get_aqi_from_api(lat: float, lon: float, target_time: datetime):
     except Exception as e:
         print(f"AQI Fetch Exception for {lat}, {lon} at {target_time}: {e}")
     
-    return 0 # Fallback 0 indicates fetch failure
+    return 0 
 
 def get_aqi_category(aqi):
-    # US AQI Categories (Standard)
     if aqi <= 50: return "Good"
     if aqi <= 100: return "Moderate"
     if aqi <= 150: return "Unhealthy (S)"
@@ -146,9 +139,6 @@ def get_aqi_category(aqi):
     return "Hazardous"
 
 
-# ═════════════════════════════════════════════════════════════════
-# APP
-# ═════════════════════════════════════════════════════════════════
 
 app = FastAPI(
     title="PIE — Pollution Intelligence Engine",
@@ -163,9 +153,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ═════════════════════════════════════════════════════════════════
-# SCHEMAS
-# ═════════════════════════════════════════════════════════════════
+
 
 class PollutionReading(BaseModel):
     """A single hourly reading from a monitoring station."""
