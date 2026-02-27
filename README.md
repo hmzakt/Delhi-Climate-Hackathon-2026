@@ -146,7 +146,7 @@ Identifies 9 pollution sources with high confidence:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/pie-pollution-engine.git
+git clone https://github.com/hmzakt/pie-pollution-engine.git
 cd pie-pollution-engine
 ```
 
